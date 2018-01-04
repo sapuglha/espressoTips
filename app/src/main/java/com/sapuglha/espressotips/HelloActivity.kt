@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_hello.*
 
+/**
+ * HelloActivity
+ */
 class HelloActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,8 +15,10 @@ class HelloActivity : AppCompatActivity() {
 
         val bundle = intent?.extras
         bundle?.let {
-            val param = bundle.get("name") as String
-            hello_activity_text_name.text = param
+            val param = bundle.get("name")
+            if (param is String) {
+                hello_activity_text_name.text = param
+            }
         }
     }
 }

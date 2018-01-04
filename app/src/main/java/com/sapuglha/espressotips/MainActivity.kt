@@ -6,6 +6,9 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * MainActivity for the app
+ */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState != null) {
-            main_activity_text_output!!.text = savedInstanceState.getString(CURRENT_TEXT)
+            main_activity_text_output.text = savedInstanceState.getString(CURRENT_TEXT)
         }
 
         main_activity_button_lower.setOnClickListener { lower() }
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun lower() {
         val input = main_activity_text_input.text.toString()
-        main_activity_text_output!!.text = input.toLowerCase()
+        main_activity_text_output.text = input.toLowerCase()
 
         if (main_activity_checkbox_new_window.isChecked) {
             val intent = Intent(this, HelloActivity::class.java)

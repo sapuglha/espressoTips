@@ -6,6 +6,9 @@ import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_list.*
 import java.util.*
 
+/**
+ * ListActivity
+ */
 class ListActivity : AppCompatActivity() {
 
     private val arrayAdapter: ArrayAdapter<String>
@@ -29,6 +32,6 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        list_activity_listview!!.adapter = arrayAdapter
+        list_activity_listview.adapter = arrayAdapter
     }
 }

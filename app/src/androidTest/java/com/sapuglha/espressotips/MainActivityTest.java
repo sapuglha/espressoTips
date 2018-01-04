@@ -32,20 +32,20 @@ public class MainActivityTest {
             new IntentsTestRule<>(MainActivity.class, true, true);
 
     @Test
-    public void test_upper_empty() throws Exception {
+    public void testUpperEmpty() {
         onView(withId(R.id.main_activity_button_upper)).perform(click());
         onView(withId(R.id.main_activity_text_output)).check(matches(withText("")));
     }
 
     @Test
-    public void test_upper_numbers() throws Exception {
+    public void testUpperNumbers() {
         onView(withId(R.id.main_activity_text_input)).perform(typeText("123"));
         onView(withId(R.id.main_activity_button_upper)).perform(click());
         onView(withId(R.id.main_activity_text_output)).check(matches(withText("123")));
     }
 
     @Test
-    public void test_lower_abc() throws Exception  {
+    public void testLowerAbc() {
         onView(withId(R.id.main_activity_text_input))
                 .perform(typeText("ABC"), closeSoftKeyboard());
         onView(withId(R.id.main_activity_button_lower)).perform(click());
@@ -57,7 +57,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void test_hello_activity() throws Exception {
+    public void testHelloActivity() {
         onView(withId(R.id.main_activity_text_input))
                 .perform(typeText("Tiago"), closeSoftKeyboard());
 
@@ -71,7 +71,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void test_label_resist_rotation() throws Exception {
+    public void testLabelResistRotation() {
         onView(withId(R.id.main_activity_text_input)).perform(typeText("xyz"), closeSoftKeyboard());
         onView(withId(R.id.main_activity_button_upper)).perform(click());
         onView(withId(R.id.main_activity_text_output)).check(matches(withText("XYZ")));
