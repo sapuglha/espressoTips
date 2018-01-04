@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import butterknife.OnClick
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +15,9 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             main_activity_text_output!!.text = savedInstanceState.getString(CURRENT_TEXT)
         }
+
+        main_activity_button_lower.setOnClickListener { lower() }
+        main_activity_button_upper.setOnClickListener { upper() }
     }
 
     public override fun onSaveInstanceState(savedInstanceState: Bundle) {
@@ -26,21 +28,19 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(savedInstanceState)
     }
 
-    @OnClick(R.id.main_activity_button_upper)
-    fun upper() {
+    private fun upper() {
         val input = main_activity_text_input.text.toString()
         main_activity_text_output.text = input.toUpperCase()
 
         Snackbar.make(main_activity_parent_view, "You entered: " + input, Snackbar.LENGTH_LONG).show()
     }
 
-    @OnClick(R.id.main_activity_button_lower)
-    fun lower() {
+    private fun lower() {
         val input = main_activity_text_input.text.toString()
         main_activity_text_output!!.text = input.toLowerCase()
 
         if (main_activity_checkbox_new_window.isChecked) {
-            val intent = Intent(this@MainActivity, HelloActivity::class.java)
+            val intent = Intent(this, HelloActivity::class.java)
             intent.putExtra("name", input)
 
             startActivity(intent)

@@ -10,8 +10,7 @@ class HelloActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hello)
 
-        val intent = intent
-        val bundle = intent.extras
+        val bundle = intent?.extras
         bundle?.let {
             val param = bundle.get("name") as String
             hello_activity_text_name.text = param
