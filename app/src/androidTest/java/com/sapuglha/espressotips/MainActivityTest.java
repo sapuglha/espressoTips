@@ -45,18 +45,21 @@ public class MainActivityTest {
     }
 
     @Test
-    public void test_lower_abc() throws Exception {
-        onView(withId(R.id.main_activity_text_input)).perform(typeText("ABC"), closeSoftKeyboard());
+    public void test_lower_abc() throws Exception  {
+        onView(withId(R.id.main_activity_text_input))
+                .perform(typeText("ABC"), closeSoftKeyboard());
         onView(withId(R.id.main_activity_button_lower)).perform(click());
         onView(withId(R.id.main_activity_text_output)).check(matches(withText("abc")));
 
-        onView(allOf(withId(android.support.design.R.id.snackbar_text), withText("You entered: ABC")))
+        onView(allOf(withId(android.support.design.R.id.snackbar_text),
+                withText("You entered: ABC")))
                 .check(matches(isDisplayed()));
     }
 
     @Test
     public void test_hello_activity() throws Exception {
-        onView(withId(R.id.main_activity_text_input)).perform(typeText("Tiago"), closeSoftKeyboard());
+        onView(withId(R.id.main_activity_text_input))
+                .perform(typeText("Tiago"), closeSoftKeyboard());
 
         onView(withId(R.id.main_activity_checkbox_new_window)).perform(click());
 
