@@ -22,17 +22,17 @@ public class ListActivityTest {
             new IntentsTestRule<>(ListActivity.class, true, true);
 
     @Test
-    public void test_item_4_visible() throws Exception {
+    public void testItem4Visible() {
         onView(withText("Item 4")).check(matches(isDisplayed()));
     }
 
     @Test
-    public void test_item_9_visible() throws Exception {
+    public void testItem9Visible() {
         onView(withText("Item 9")).check(matches(isDisplayed()));
     }
 
     @Test
-    public void test_item_9_data_is_visible() throws Exception {
+    public void testItem9DataIsVisible() {
         // https://google.github.io/android-testing-support-library/docs/espresso/lists/
         onData(is("Item 9")).check(matches(isDisplayed()));
     }
