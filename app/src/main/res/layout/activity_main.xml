@@ -2,20 +2,20 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_parent_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main_activity_parent_view"
     tools:context="com.sapuglha.espressotips.MainActivity">
 
     <EditText
         android:id="@+id/main_activity_text_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/main_activity_hint_type_here"
         android:inputType="textPersonName"
@@ -27,45 +27,45 @@
         android:id="@+id/main_activity_text_output"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text=""
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/main_activity_checkbox_new_window" />
 
     <Button
         android:id="@+id/main_activity_button_upper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="64dp"
         android:text="TO UPPER"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="64dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/main_activity_button_lower"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/main_activity_button_lower"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="64dp"
         android:text="to lower"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="24dp"
-        app:layout_constraintStart_toEndOf="@+id/main_activity_button_upper"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_activity_button_upper" />
 
     <CheckBox
         android:id="@+id/main_activity_checkbox_new_window"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/main_activity_checkbox_new_activity"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/main_activity_text_input" />
 
 </android.support.constraint.ConstraintLayout>

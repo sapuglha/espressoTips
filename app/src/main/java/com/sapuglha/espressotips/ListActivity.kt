@@ -6,9 +6,6 @@ import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_list.*
 import java.util.*
 
-/**
- * ListActivity
- */
 class ListActivity : AppCompatActivity() {
 
     private val arrayAdapter: ArrayAdapter<String>
